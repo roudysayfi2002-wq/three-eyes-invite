@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Three Eyes — Membership Unlocked</title>
+  <meta name="description" content="A hoodie that comes with a community." />
+  <style>
+    :root{
+      --bg:#0B0D12;
+      --card:#121622;
+      --text:#F2F5FF;
+      --muted:#AAB2C5;
+      --accent:#6CD4FF;
+      --accentGlow: rgba(108,212,255,.25);
+      --stroke: rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 50% -150px, var(--accentGlow), transparent 55%),
+                  radial-gradient(900px 450px at 80% 10%, rgba(255,255,255,.06), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+    .topmark{
+      display:flex; align-items:center; gap:12px;
+      opacity:.95;
+      margin-top: 10px;
+    }
+    .eyes{ display:flex; gap:10px; align-items:center; }
+    .eye{
+      width:44px; height:44px; border-radius:999px;
+      border:2px solid rgba(242,245,255,.75);
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset;
+    }
+    .badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing:.12em;
+      text-transform: uppercase;
+      margin: 22px 0 14px;
+    }
+    h1{
+      font-size: clamp(34px, 5vw, 54px);
+      letter-spacing:-0.02em;
+      margin: 6px 0 10px;
+    }
+    .sub{
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 56ch;
+      margin: 0 0 18px;
+    }
+    .row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin: 18px 0 6px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+      font-weight: 600;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16);}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(108,212,255,.22), rgba(108,212,255,.08));
+      border-color: rgba(108,212,255,.35);
+    }
+    .btn.primary:hover{ border-color: rgba(108,212,255,.55); }
+
+    .section{
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .card{
+      background: rgba(18,22,34,.85);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 720px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    h2{
+      font-size: 18px;
+      margin: 0 0 10px;
+      letter-spacing:-0.01em;
+    }
+    .p{
+      margin:0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .kicker{
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing:.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .eventTitle{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom: 10px;
+    }
+    .tag{
+      font-size: 12px;
+      color: rgba(242,245,255,.85);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      white-space:nowrap;
+    }
+    .meta{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin: 10px 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .meta strong{ color: rgba(242,245,255,.9); font-weight: 700; }
+    .note{
+      margin-top: 12px;
+      font-size: 14px;
+      color: rgba(242,245,255,.78);
+      border-left: 3px solid rgba(108,212,255,.5);
+      padding-left: 12px;
+    }
+    .footer{
+      margin-top: 26px;
+      text-align:center;
+      color: rgba(170,178,197,.7);
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topmark">
+      <div class="eyes" aria-hidden="true">
+        <div class="eye">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M8 3h8l4 6-4 6H8L4 9l4-6Z" stroke="rgba(242,245,255,.9)" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="eye">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3l2.2 6.2L21 12l-6.8 2.8L12 21l-2.2-6.2L3 12l6.8-2.8L12 3Z" stroke="rgba(242,245,255,.9)" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="eye">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14" stroke="rgba(242,245,255,.9)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="badge">Membership unlocked</div>
+    <h1>Welcome to The Three Eyes.</h1>
+    <p class="sub">This hoodie isn’t just a hoodie. It’s your entry ticket to a community — perks, discounts, and real events with real people.</p>
+
+    <div class="row">
+      <a class="btn primary" href="#events">Your first missions ↓</a>
+      <a class="btn" href="#what">What this is</a>
+      <a class="btn" href="#note">A note from me</a>
+    </div>
+
+    <div id="what" class="section">
+      <div class="card">
+        <div class="kicker">What you just unlocked</div>
+        <h2>The concept</h2>
+        <p class="p">
+          The Three Eyes is built like a club: you join through the clothing,
+          then you get access to member perks — discounts, meetups, and events that actually get you out there.
+        </p>
+
+        <h2 style="margin-top:14px;">Perks</h2>
+        <ul class="list">
+          <li>Member discounts after you join</li>
+          <li>Access to community events (the fun kind)</li>
+          <li>A reason to collect memories, not just outfits</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="events" class="section">
+      <div class="kicker">Your first two events</div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="eventTitle">
+            <h2 style="margin:0;">Breakfast</h2>
+            <span class="tag">Tomorrow • 10:00 AM</span>
+          </div>
+          <div class="meta">
+            <div><strong>Where:</strong> Cheese on Top, Zaituna Bay</div>
+          </div>
+          <a class="btn primary" href="https://maps.app.goo.gl/1ANvaoNSdfb1zZok7" target="_blank" rel="noopener">Open Maps</a>
+          <div class="note">Soft start. Good coffee. New faces. Easy win.</div>
+        </div>
+
+        <div class="card">
+          <div class="eventTitle">
+            <h2 style="margin:0;">Laser Tag</h2>
+            <span class="tag">Thursday • 7:00 PM</span>
+          </div>
+          <div class="meta">
+            <div><strong>Where:</strong> Sin El Fil</div>
+          </div>
+          <a class="btn primary" href="https://maps.app.goo.gl/W9XtfnEmS53z6wU46" target="_blank" rel="noopener">Open Maps</a>
+          <div class="note">Serious business disguised as chaos. I’m in.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="note" class="section">
+      <div class="card">
+        <div class="kicker">A note from me</div>
+        <h2>For you</h2>
+        <p class="p">
+          I didn’t want to get you “just a gift.” I wanted to get you a door.
+        </p>
+        <p class="p" style="margin-top:10px;">
+          This hoodie is your entry into something bigger — a community, perks, and little moments that turn into real memories.
+          And honestly… I love the idea of us showing up together, like we belong there (because you do).
+        </p>
+        <p class="p" style="margin-top:10px;">
+          So yeah — you’re officially in. And your first two events are already lined up.
+          Consider this your membership… and me your +1 whenever you want.
+        </p>
+        <p class="p" style="margin-top:14px; color: rgba(242,245,255,.88); font-weight:700;">
+          — Roudy
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      Token = access. Hoodie = membership. Community = the best part.
+    </div>
+  </div>
+</body>
+</html>
